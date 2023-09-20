@@ -3,9 +3,10 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('cars');
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3333');
-  res.setHeader('Access-Control-Allow-Credentials', true);
+  res
+      .set('Access-Control-Allow-Origin', 'http://localhost:3333')
+      .set('Access-Control-Allow-Credentials', true)
+      .send('cars');
 });
 
 module.exports = router;
